@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000 // instalando o servidor Zeit
 app.set('views', path.join(__dirname, 'views')) // necessário para rodar no zeit
 app.set('view engine', 'ejs') // para separar JS do HTML
 
-app.use(express.static('public')) // para quando for requerido algo diferente '/'
+app.use(express.static(path.join(__dirname,'public'))) // para quando for requerido algo diferente '/'
 app.use(bodyParser.urlencoded({ extended: true}))
 app.get('/', async(request, response) => { // receber uma requisição('/') e responder.
     const db = await dbConnection
