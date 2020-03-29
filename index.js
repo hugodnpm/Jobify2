@@ -6,6 +6,13 @@ const sqlite = require('sqlite') // importando banco de dados
 const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'), {Promise})
 const port = process.env.PORT || 3000 // instalando o servidor Zeit
 
+app.use('/admin', (req,res, next) => { // função admin apenas para o sesenvolvedor
+    if(req.hostname === 'localhost'){
+        next()
+    }else{
+        res.send('Not Allowed')
+    }
+})
 app.set('views', path.join(__dirname, 'views')) // necessário para rodar no zeit
 app.set('view engine', 'ejs') // para separar JS do HTML
 
