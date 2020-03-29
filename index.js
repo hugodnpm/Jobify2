@@ -3,6 +3,7 @@ const app = express() // criando um novo express para o projeto será usando com
 const bodyParser = require('body-parser') // serve para pegar os dados do formulário e colocar no banco de dados
 const sqlite = require('sqlite') // importando banco de dados
 const dbConnection = sqlite.open('banco.sqlite', {Promise})
+const port = process.env.PORT || 3000 // instalando o servidor Zeit
 
 app.set('view engine', 'ejs') // para separar JS do HTML
 
@@ -123,7 +124,7 @@ const init = async() => { // função para fazer o banco de dados rodar
 }
 
 init()
-app.listen(3000, (err) => {  // serve para rodar a aplicação
+app.listen(port, (err) => {  // serve para rodar a aplicação
     if(err) {
         console.log('Não foi possível iniciar o servidor do Jobify!')
     }else{
