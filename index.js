@@ -1,8 +1,9 @@
 const express = require('express') // importando o express para o projeto jobify
 const app = express() // criando um novo express para o projeto será usando como função
 const bodyParser = require('body-parser') // serve para pegar os dados do formulário e colocar no banco de dados
+const path = require('path') // necessário para o zeit funcionar
 const sqlite = require('sqlite') // importando banco de dados
-const dbConnection = sqlite.open('banco.sqlite', {Promise})
+const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'), {Promise})
 const port = process.env.PORT || 3000 // instalando o servidor Zeit
 
 app.set('view engine', 'ejs') // para separar JS do HTML
