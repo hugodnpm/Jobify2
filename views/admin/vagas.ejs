@@ -1,0 +1,24 @@
+<%- include('header') %> <!-- incluindo o cabeçalho(outro arquivo) nesta pagina -->
+    
+        
+    
+    <h2>JOBIFY - ADMINISTRADOR - VAGAS:
+        <a href="/admin/vagas/nova">Nova Vaga</a>
+        <a href="/admin"> | Voltar  </a>
+    </h2>
+    
+    <div>
+        <ul>
+            <% vagas.forEach( vaga => { %>
+            <li>
+                <%- vaga.titulo %> |
+                <a href="/admin/vagas/delete/<%- vaga.id %>">Excluir  | </a>
+                <a href="/admin/vagas/editar/<%- vaga.id %>">editar</a>
+            </li>
+                
+            <% }) %>
+        </ul>
+    </div>
+    
+    
+    <%- include('footer') %>

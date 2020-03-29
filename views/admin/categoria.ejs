@@ -1,0 +1,24 @@
+<%- include('header') %> <!-- incluindo o cabeçalho(outro arquivo) nesta pagina -->
+    
+        
+    
+    <h2>JOBIFY - ADMINISTRADOR - CATEGORIAS:
+        <a href="/admin/categoria/nova">Nova Categoria | </a>
+        <a href="/admin"> | Voltar  </a>
+    </h2>
+    
+    <div>
+        <ul>
+            <% categorias.forEach( categorias => { %>
+            <li>
+                <%- categorias.categoria %> |
+                <a href="/admin/categoria/delete/<%- categorias.id %>">Excluir  | </a>
+                <a href="/admin/categoria/editar/<%- categorias.id %>">editar</a>
+            </li>
+                
+            <% }) %>
+        </ul>
+    </div>
+    
+    
+    <%- include('footer') %>

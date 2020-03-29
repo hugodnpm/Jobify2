@@ -1,0 +1,40 @@
+body {
+    font-family: 'Roboto', 'sans-serif';
+}
+h1{
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-size: large;
+}
+ul {
+    list-style: none;
+    padding-left: 25px;
+}
+h2 {
+    background-color: #c4c4c4;
+    padding: 20px;
+    font-size: 24px;
+}
+h3{
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin: 20px 0 10px 0;
+}
+input, select{
+    display: block;
+    padding: 8px;
+    width: 540px;
+}
+textarea{
+    padding: 8px;
+    width: 540px;
+    height: 320px;
+}
+button{
+    padding: 12px;
+}

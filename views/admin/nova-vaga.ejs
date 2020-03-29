@@ -1,0 +1,31 @@
+<%- include('header') %> <!-- incluindo o cabeçalho(outro arquivo) nesta pagina -->
+    
+        
+    
+    <h2>JOBIFY - ADMINISTRADOR - NOVA VAGA:
+        <a href="/admin/vagas"> Vaga</a>
+    </h2>
+    
+    <div>
+        <form method="POST">
+            <label>Título:</label>
+            <input type="text" name="titulo">
+            <br>
+            <label>Descrição:</label>
+            <textarea name="descrição"></textarea>
+            <br>
+            <label>Categoria:</label>
+            <select name="categoria" >
+                <%categorias.forEach( categoria => { %>
+                <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+                
+                <% }) %>
+            </select>
+            <br>
+            <button>Salvar Vaga</button>
+        </form>
+        
+    </div>
+    
+    
+    <%- include('footer') %>
