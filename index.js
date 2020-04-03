@@ -6,7 +6,7 @@ const sqlite = require('sqlite') // importando banco de dados
 const dbConnection = sqlite.open(path.resolve(__dirname,'banco.sqlite'), {Promise})
 const port = process.env.PORT || 3000 // instalando o servidor Zeit
 
-app.use('/admin', (req,res, next) => { // função admin apenas para o sesenvolvedor
+app.use('/admin', (req,res, next) => { // função admin apenas para o desenvolvedor
     if(req.hostname === 'localhost'){
         next()
     }else{
